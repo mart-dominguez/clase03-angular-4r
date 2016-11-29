@@ -1,4 +1,4 @@
-angular.module('app01',['ngRoute','app01LocStoService'])
+angular.module('app01',['ngRoute','app01RestService'])
 .config(function ($routeProvider,$locationProvider) {
     $routeProvider
     .when('/tarea', {

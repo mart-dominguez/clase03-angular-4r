@@ -9,7 +9,12 @@ angular.module('app01').controller("TareaController",
 				console.log($routeParams.taereaId);				
 				return unaTarea.id === $routeParams.taereaId;
 			});*/
-			$scope.tareaActual = tareaDao.buscarPorId($routeParams.tareaId);
+			//$scope.tareaActual = tareaDao.buscarPorId($routeParams.tareaId);
+			tareaDao.buscarPorId($routeParams.tareaId).then(
+				function(data){
+					$scope.tareaActual = data;
+				}
+			);
 		} else{
 			// definimos un objeto que almacena la tarea
 			$scope.tareaActual = {
